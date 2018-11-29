@@ -71,7 +71,7 @@ You'll be able to run a few environments right away:
 We recommend playing with those environments at first, and then later
 installing the dependencies for the remaining environments.
 
-Installing everything
+Installing everything (DEPRECATED SINCE REMOVAL?)
 ---------------------
 
 To install the full set of environments, you'll need to have some system
@@ -107,12 +107,6 @@ On Ubuntu 18.04:
 
     apt install -y python3-dev zlib1g-dev libjpeg-dev cmake swig python-pyglet python3-opengl libboost-all-dev libsdl2-dev \
         libosmesa6-dev patchelf ffmpeg xvfb
-
-
-MuJoCo has a proprietary dependency we can't set up for you. Follow
-the
-`instructions <https://github.com/openai/mujoco-py#obtaining-the-binaries-and-license-key>`_
-in the ``mujoco-py`` package for help.
 
 Once you're ready to install everything, run ``pip install -e '.[all]'`` (or ``pip install 'gym[all]'``).
 
@@ -180,32 +174,6 @@ sequence.
     env.reset()
     env.render()
 
-Atari
------
-
-The Atari environments are a variety of Atari video games. If you didn't do the full install, you can install dependencies via ``pip install -e '.[atari]'`` (you'll need ``cmake`` installed) and then get started as follow:
-
-.. code:: python
-
-    import gym
-    env = gym.make('SpaceInvaders-v0')
-    env.reset()
-    env.render()
-
-This will install ``atari-py``, which automatically compiles the `Arcade Learning Environment <http://www.arcadelearningenvironment.org/>`_. This can take quite a while (a few minutes on a decent laptop), so just be prepared.
-
-Box2d
------------
-
-Box2d is a 2D physics engine. You can install it via  ``pip install -e '.[box2d]'`` and then get started as follow:
-
-.. code:: python
-
-    import gym
-    env = gym.make('LunarLander-v2')
-    env.reset()
-    env.render()
-
 Classic control
 ---------------
 
@@ -215,39 +183,6 @@ These are a variety of classic control tasks, which would appear in a typical re
 
     import gym
     env = gym.make('CartPole-v0')
-    env.reset()
-    env.render()
-
-MuJoCo
-------
-
-`MuJoCo <http://www.mujoco.org/>`_ is a physics engine which can do
-very detailed efficient simulations with contacts. It's not
-open-source, so you'll have to follow the instructions in `mujoco-py
-<https://github.com/openai/mujoco-py#obtaining-the-binaries-and-license-key>`_
-to set it up. You'll have to also run ``pip install -e '.[mujoco]'`` if you didn't do the full install.
-
-.. code:: python
-
-    import gym
-    env = gym.make('Humanoid-v2')
-    env.reset()
-    env.render()
-
-
-Robotics
-------
-
-`MuJoCo <http://www.mujoco.org/>`_ is a physics engine which can do
-very detailed efficient simulations with contacts and we use it for all robotics environments. It's not
-open-source, so you'll have to follow the instructions in `mujoco-py
-<https://github.com/openai/mujoco-py#obtaining-the-binaries-and-license-key>`_
-to set it up. You'll have to also run ``pip install -e '.[robotics]'`` if you didn't do the full install.
-
-.. code:: python
-
-    import gym
-    env = gym.make('HandManipulateBlock-v0')
     env.reset()
     env.render()
 

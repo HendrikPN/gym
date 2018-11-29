@@ -18,11 +18,11 @@ RUN \
         python3-dev \
         python-pyglet \
         python3-opengl \
-        libjpeg-dev \
-        libboost-all-dev \
-        libsdl2-dev \
-        libosmesa6-dev \
-        patchelf \
+        # libjpeg-dev \
+        # libboost-all-dev \
+        # libsdl2-dev \
+        # libosmesa6-dev \
+        # patchelf \
         xvfb \
         ffmpeg \
         wget \
@@ -30,19 +30,19 @@ RUN \
 
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    pip install tox && \
+    pip install tox
 
-# Download mujoco
-    mkdir /root/.mujoco && \
-    cd /root/.mujoco  && \
-    wget https://www.roboti.us/download/mjpro150_linux.zip  && \
-    unzip mjpro150_linux.zip
+# Download mujoco - not required here
+    # mkdir /root/.mujoco && \
+    # cd /root/.mujoco  && \
+    # wget https://www.roboti.us/download/mjpro150_linux.zip  && \
+    # unzip mjpro150_linux.zip
 
-ARG MUJOCO_KEY
-ENV MUJOCO_KEY=$MUJOCO_KEY
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mjpro150/bin
+# ARG MUJOCO_KEY
+# ENV MUJOCO_KEY=$MUJOCO_KEY
+# ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mjpro150/bin
 
-RUN echo $MUJOCO_KEY | base64 --decode > /root/.mujoco/mjkey.txt
+# RUN echo $MUJOCO_KEY | base64 --decode > /root/.mujoco/mjkey.txt
 
 # install dependencies
 COPY . /usr/local/gym/

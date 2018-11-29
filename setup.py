@@ -7,11 +7,7 @@ from version import VERSION
 
 # Environment-specific dependencies.
 extras = {
-  'atari': ['atari_py>=0.1.4', 'Pillow', 'PyOpenGL'],
-  'box2d': ['box2d-py>=2.3.5'],
   'classic_control': ['PyOpenGL'],
-  'mujoco': ['mujoco_py>=1.50', 'imageio'],
-  'robotics': ['mujoco_py>=1.50', 'imageio'],
 }
 
 # Meta dependency groups.
@@ -20,12 +16,12 @@ for group_name in extras:
     all_deps += extras[group_name]
 extras['all'] = all_deps
 
-setup(name='gym',
+setup(name='scilab',
       version=VERSION,
-      description='The OpenAI Gym: A toolkit for developing and comparing your reinforcement learning agents.',
-      url='https://github.com/openai/gym',
+      description='The OpenAI Gym for Science: A platform for your scientific reinforcement learning problem.',
+      url='https://github.com/HendrikPN/gym',
       author='OpenAI',
-      author_email='gym@openai.com',
+      author_email='hendrik.poulsen-nautrup@uibk.ac.at',
       license='',
       packages=[package for package in find_packages()
                 if package.startswith('gym')],
@@ -35,14 +31,7 @@ setup(name='gym',
       ],
       extras_require=extras,
       package_data={'gym': [
-        'envs/mujoco/assets/*.xml',
-        'envs/classic_control/assets/*.png',
-        'envs/robotics/assets/LICENSE.md',
-        'envs/robotics/assets/fetch/*.xml',
-        'envs/robotics/assets/hand/*.xml',
-        'envs/robotics/assets/stls/fetch/*.stl',
-        'envs/robotics/assets/stls/hand/*.stl',
-        'envs/robotics/assets/textures/*.png']
+        'envs/classic_control/assets/*.png']
       },
       tests_require=['pytest', 'mock'],
 )

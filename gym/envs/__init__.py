@@ -1,5 +1,15 @@
 from gym.envs.registration import registry, register, make, spec
 
+
+# Quantum Physics
+# ----------------------------------------
+
+register(
+    id='Inverse_CartPole-v0',
+    entry_point='gym.envs.quantum_physics:InverseCartPoleEnv',
+)
+
+
 # Algorithmic
 # ----------------------------------------
 
@@ -90,43 +100,43 @@ register(
     max_episode_steps=500,
 )
 
-# Box2d
-# ----------------------------------------
+# # Box2d
+# # ----------------------------------------
 
-register(
-    id='LunarLander-v2',
-    entry_point='gym.envs.box2d:LunarLander',
-    max_episode_steps=1000,
-    reward_threshold=200,
-)
+# register(
+#     id='LunarLander-v2',
+#     entry_point='gym.envs.box2d:LunarLander',
+#     max_episode_steps=1000,
+#     reward_threshold=200,
+# )
 
-register(
-    id='LunarLanderContinuous-v2',
-    entry_point='gym.envs.box2d:LunarLanderContinuous',
-    max_episode_steps=1000,
-    reward_threshold=200,
-)
+# register(
+#     id='LunarLanderContinuous-v2',
+#     entry_point='gym.envs.box2d:LunarLanderContinuous',
+#     max_episode_steps=1000,
+#     reward_threshold=200,
+# )
 
-register(
-    id='BipedalWalker-v2',
-    entry_point='gym.envs.box2d:BipedalWalker',
-    max_episode_steps=1600,
-    reward_threshold=300,
-)
+# register(
+#     id='BipedalWalker-v2',
+#     entry_point='gym.envs.box2d:BipedalWalker',
+#     max_episode_steps=1600,
+#     reward_threshold=300,
+# )
 
-register(
-    id='BipedalWalkerHardcore-v2',
-    entry_point='gym.envs.box2d:BipedalWalkerHardcore',
-    max_episode_steps=2000,
-    reward_threshold=300,
-)
+# register(
+#     id='BipedalWalkerHardcore-v2',
+#     entry_point='gym.envs.box2d:BipedalWalkerHardcore',
+#     max_episode_steps=2000,
+#     reward_threshold=300,
+# )
 
-register(
-    id='CarRacing-v0',
-    entry_point='gym.envs.box2d:CarRacing',
-    max_episode_steps=1000,
-    reward_threshold=900,
-)
+# register(
+#     id='CarRacing-v0',
+#     entry_point='gym.envs.box2d:CarRacing',
+#     max_episode_steps=1000,
+#     reward_threshold=900,
+# )
 
 # Toy Text
 # ----------------------------------------
@@ -198,312 +208,312 @@ register(
     max_episode_steps=200,
 )
 
-# Mujoco
-# ----------------------------------------
+# # Mujoco
+# # ----------------------------------------
 
-# 2D
+# # 2D
 
-register(
-    id='Reacher-v2',
-    entry_point='gym.envs.mujoco:ReacherEnv',
-    max_episode_steps=50,
-    reward_threshold=-3.75,
-)
+# register(
+#     id='Reacher-v2',
+#     entry_point='gym.envs.mujoco:ReacherEnv',
+#     max_episode_steps=50,
+#     reward_threshold=-3.75,
+# )
 
-register(
-    id='Pusher-v2',
-    entry_point='gym.envs.mujoco:PusherEnv',
-    max_episode_steps=100,
-    reward_threshold=0.0,
-)
+# register(
+#     id='Pusher-v2',
+#     entry_point='gym.envs.mujoco:PusherEnv',
+#     max_episode_steps=100,
+#     reward_threshold=0.0,
+# )
 
-register(
-    id='Thrower-v2',
-    entry_point='gym.envs.mujoco:ThrowerEnv',
-    max_episode_steps=100,
-    reward_threshold=0.0,
-)
+# register(
+#     id='Thrower-v2',
+#     entry_point='gym.envs.mujoco:ThrowerEnv',
+#     max_episode_steps=100,
+#     reward_threshold=0.0,
+# )
 
-register(
-    id='Striker-v2',
-    entry_point='gym.envs.mujoco:StrikerEnv',
-    max_episode_steps=100,
-    reward_threshold=0.0,
-)
+# register(
+#     id='Striker-v2',
+#     entry_point='gym.envs.mujoco:StrikerEnv',
+#     max_episode_steps=100,
+#     reward_threshold=0.0,
+# )
 
-register(
-    id='InvertedPendulum-v2',
-    entry_point='gym.envs.mujoco:InvertedPendulumEnv',
-    max_episode_steps=1000,
-    reward_threshold=950.0,
-)
+# register(
+#     id='InvertedPendulum-v2',
+#     entry_point='gym.envs.mujoco:InvertedPendulumEnv',
+#     max_episode_steps=1000,
+#     reward_threshold=950.0,
+# )
 
-register(
-    id='InvertedDoublePendulum-v2',
-    entry_point='gym.envs.mujoco:InvertedDoublePendulumEnv',
-    max_episode_steps=1000,
-    reward_threshold=9100.0,
-)
+# register(
+#     id='InvertedDoublePendulum-v2',
+#     entry_point='gym.envs.mujoco:InvertedDoublePendulumEnv',
+#     max_episode_steps=1000,
+#     reward_threshold=9100.0,
+# )
 
-register(
-    id='HalfCheetah-v2',
-    entry_point='gym.envs.mujoco:HalfCheetahEnv',
-    max_episode_steps=1000,
-    reward_threshold=4800.0,
-)
+# register(
+#     id='HalfCheetah-v2',
+#     entry_point='gym.envs.mujoco:HalfCheetahEnv',
+#     max_episode_steps=1000,
+#     reward_threshold=4800.0,
+# )
 
-register(
-    id='Hopper-v2',
-    entry_point='gym.envs.mujoco:HopperEnv',
-    max_episode_steps=1000,
-    reward_threshold=3800.0,
-)
+# register(
+#     id='Hopper-v2',
+#     entry_point='gym.envs.mujoco:HopperEnv',
+#     max_episode_steps=1000,
+#     reward_threshold=3800.0,
+# )
 
-register(
-    id='Swimmer-v2',
-    entry_point='gym.envs.mujoco:SwimmerEnv',
-    max_episode_steps=1000,
-    reward_threshold=360.0,
-)
+# register(
+#     id='Swimmer-v2',
+#     entry_point='gym.envs.mujoco:SwimmerEnv',
+#     max_episode_steps=1000,
+#     reward_threshold=360.0,
+# )
 
-register(
-    id='Walker2d-v2',
-    max_episode_steps=1000,
-    entry_point='gym.envs.mujoco:Walker2dEnv',
-)
+# register(
+#     id='Walker2d-v2',
+#     max_episode_steps=1000,
+#     entry_point='gym.envs.mujoco:Walker2dEnv',
+# )
 
-register(
-    id='Ant-v2',
-    entry_point='gym.envs.mujoco:AntEnv',
-    max_episode_steps=1000,
-    reward_threshold=6000.0,
-)
+# register(
+#     id='Ant-v2',
+#     entry_point='gym.envs.mujoco:AntEnv',
+#     max_episode_steps=1000,
+#     reward_threshold=6000.0,
+# )
 
-register(
-    id='Humanoid-v2',
-    entry_point='gym.envs.mujoco:HumanoidEnv',
-    max_episode_steps=1000,
-)
+# register(
+#     id='Humanoid-v2',
+#     entry_point='gym.envs.mujoco:HumanoidEnv',
+#     max_episode_steps=1000,
+# )
 
-register(
-    id='HumanoidStandup-v2',
-    entry_point='gym.envs.mujoco:HumanoidStandupEnv',
-    max_episode_steps=1000,
-)
+# register(
+#     id='HumanoidStandup-v2',
+#     entry_point='gym.envs.mujoco:HumanoidStandupEnv',
+#     max_episode_steps=1000,
+# )
 
-# Robotics
-# ----------------------------------------
+# # Robotics
+# # ----------------------------------------
 
-def _merge(a, b):
-    a.update(b)
-    return a
+# def _merge(a, b):
+#     a.update(b)
+#     return a
 
-for reward_type in ['sparse', 'dense']:
-    suffix = 'Dense' if reward_type == 'dense' else ''
-    kwargs = {
-        'reward_type': reward_type,
-    }
+# for reward_type in ['sparse', 'dense']:
+#     suffix = 'Dense' if reward_type == 'dense' else ''
+#     kwargs = {
+#         'reward_type': reward_type,
+#     }
 
-    # Fetch
-    register(
-        id='FetchSlide{}-v1'.format(suffix),
-        entry_point='gym.envs.robotics:FetchSlideEnv',
-        kwargs=kwargs,
-        max_episode_steps=50,
-    )
+#     # Fetch
+#     register(
+#         id='FetchSlide{}-v1'.format(suffix),
+#         entry_point='gym.envs.robotics:FetchSlideEnv',
+#         kwargs=kwargs,
+#         max_episode_steps=50,
+#     )
 
-    register(
-        id='FetchPickAndPlace{}-v1'.format(suffix),
-        entry_point='gym.envs.robotics:FetchPickAndPlaceEnv',
-        kwargs=kwargs,
-        max_episode_steps=50,
-    )
+#     register(
+#         id='FetchPickAndPlace{}-v1'.format(suffix),
+#         entry_point='gym.envs.robotics:FetchPickAndPlaceEnv',
+#         kwargs=kwargs,
+#         max_episode_steps=50,
+#     )
 
-    register(
-        id='FetchReach{}-v1'.format(suffix),
-        entry_point='gym.envs.robotics:FetchReachEnv',
-        kwargs=kwargs,
-        max_episode_steps=50,
-    )
+#     register(
+#         id='FetchReach{}-v1'.format(suffix),
+#         entry_point='gym.envs.robotics:FetchReachEnv',
+#         kwargs=kwargs,
+#         max_episode_steps=50,
+#     )
 
-    register(
-        id='FetchPush{}-v1'.format(suffix),
-        entry_point='gym.envs.robotics:FetchPushEnv',
-        kwargs=kwargs,
-        max_episode_steps=50,
-    )
+#     register(
+#         id='FetchPush{}-v1'.format(suffix),
+#         entry_point='gym.envs.robotics:FetchPushEnv',
+#         kwargs=kwargs,
+#         max_episode_steps=50,
+#     )
 
-    # Hand
-    register(
-        id='HandReach{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandReachEnv',
-        kwargs=kwargs,
-        max_episode_steps=50,
-    )
+#     # Hand
+#     register(
+#         id='HandReach{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandReachEnv',
+#         kwargs=kwargs,
+#         max_episode_steps=50,
+#     )
 
-    register(
-        id='HandManipulateBlockRotateZ{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandBlockEnv',
-        kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'z'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulateBlockRotateZ{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandBlockEnv',
+#         kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'z'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    register(
-        id='HandManipulateBlockRotateParallel{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandBlockEnv',
-        kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'parallel'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulateBlockRotateParallel{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandBlockEnv',
+#         kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'parallel'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    register(
-        id='HandManipulateBlockRotateXYZ{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandBlockEnv',
-        kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulateBlockRotateXYZ{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandBlockEnv',
+#         kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    register(
-        id='HandManipulateBlockFull{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandBlockEnv',
-        kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulateBlockFull{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandBlockEnv',
+#         kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    # Alias for "Full"
-    register(
-        id='HandManipulateBlock{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandBlockEnv',
-        kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     # Alias for "Full"
+#     register(
+#         id='HandManipulateBlock{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandBlockEnv',
+#         kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    register(
-        id='HandManipulateEggRotate{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandEggEnv',
-        kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulateEggRotate{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandEggEnv',
+#         kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    register(
-        id='HandManipulateEggFull{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandEggEnv',
-        kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulateEggFull{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandEggEnv',
+#         kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    # Alias for "Full"
-    register(
-        id='HandManipulateEgg{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandEggEnv',
-        kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     # Alias for "Full"
+#     register(
+#         id='HandManipulateEgg{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandEggEnv',
+#         kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    register(
-        id='HandManipulatePenRotate{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandPenEnv',
-        kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulatePenRotate{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandPenEnv',
+#         kwargs=_merge({'target_position': 'ignore', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    register(
-        id='HandManipulatePenFull{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandPenEnv',
-        kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     register(
+#         id='HandManipulatePenFull{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandPenEnv',
+#         kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-    # Alias for "Full"
-    register(
-        id='HandManipulatePen{}-v0'.format(suffix),
-        entry_point='gym.envs.robotics:HandPenEnv',
-        kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
-        max_episode_steps=100,
-    )
+#     # Alias for "Full"
+#     register(
+#         id='HandManipulatePen{}-v0'.format(suffix),
+#         entry_point='gym.envs.robotics:HandPenEnv',
+#         kwargs=_merge({'target_position': 'random', 'target_rotation': 'xyz'}, kwargs),
+#         max_episode_steps=100,
+#     )
 
-# Atari
-# ----------------------------------------
+# # Atari
+# # ----------------------------------------
 
-# # print ', '.join(["'{}'".format(name.split('.')[0]) for name in atari_py.list_games()])
-for game in ['air_raid', 'alien', 'amidar', 'assault', 'asterix', 'asteroids', 'atlantis',
-    'bank_heist', 'battle_zone', 'beam_rider', 'berzerk', 'bowling', 'boxing', 'breakout', 'carnival',
-    'centipede', 'chopper_command', 'crazy_climber', 'demon_attack', 'double_dunk',
-    'elevator_action', 'enduro', 'fishing_derby', 'freeway', 'frostbite', 'gopher', 'gravitar',
-    'hero', 'ice_hockey', 'jamesbond', 'journey_escape', 'kangaroo', 'krull', 'kung_fu_master',
-    'montezuma_revenge', 'ms_pacman', 'name_this_game', 'phoenix', 'pitfall', 'pong', 'pooyan',
-    'private_eye', 'qbert', 'riverraid', 'road_runner', 'robotank', 'seaquest', 'skiing',
-    'solaris', 'space_invaders', 'star_gunner', 'tennis', 'time_pilot', 'tutankham', 'up_n_down',
-    'venture', 'video_pinball', 'wizard_of_wor', 'yars_revenge', 'zaxxon']:
-    for obs_type in ['image', 'ram']:
-        # space_invaders should yield SpaceInvaders-v0 and SpaceInvaders-ram-v0
-        name = ''.join([g.capitalize() for g in game.split('_')])
-        if obs_type == 'ram':
-            name = '{}-ram'.format(name)
+# # # print ', '.join(["'{}'".format(name.split('.')[0]) for name in atari_py.list_games()])
+# for game in ['air_raid', 'alien', 'amidar', 'assault', 'asterix', 'asteroids', 'atlantis',
+#     'bank_heist', 'battle_zone', 'beam_rider', 'berzerk', 'bowling', 'boxing', 'breakout', 'carnival',
+#     'centipede', 'chopper_command', 'crazy_climber', 'demon_attack', 'double_dunk',
+#     'elevator_action', 'enduro', 'fishing_derby', 'freeway', 'frostbite', 'gopher', 'gravitar',
+#     'hero', 'ice_hockey', 'jamesbond', 'journey_escape', 'kangaroo', 'krull', 'kung_fu_master',
+#     'montezuma_revenge', 'ms_pacman', 'name_this_game', 'phoenix', 'pitfall', 'pong', 'pooyan',
+#     'private_eye', 'qbert', 'riverraid', 'road_runner', 'robotank', 'seaquest', 'skiing',
+#     'solaris', 'space_invaders', 'star_gunner', 'tennis', 'time_pilot', 'tutankham', 'up_n_down',
+#     'venture', 'video_pinball', 'wizard_of_wor', 'yars_revenge', 'zaxxon']:
+#     for obs_type in ['image', 'ram']:
+#         # space_invaders should yield SpaceInvaders-v0 and SpaceInvaders-ram-v0
+#         name = ''.join([g.capitalize() for g in game.split('_')])
+#         if obs_type == 'ram':
+#             name = '{}-ram'.format(name)
 
-        nondeterministic = False
-        if game == 'elevator_action' and obs_type == 'ram':
-            # ElevatorAction-ram-v0 seems to yield slightly
-            # non-deterministic observations about 10% of the time. We
-            # should track this down eventually, but for now we just
-            # mark it as nondeterministic.
-            nondeterministic = True
+#         nondeterministic = False
+#         if game == 'elevator_action' and obs_type == 'ram':
+#             # ElevatorAction-ram-v0 seems to yield slightly
+#             # non-deterministic observations about 10% of the time. We
+#             # should track this down eventually, but for now we just
+#             # mark it as nondeterministic.
+#             nondeterministic = True
 
-        register(
-            id='{}-v0'.format(name),
-            entry_point='gym.envs.atari:AtariEnv',
-            kwargs={'game': game, 'obs_type': obs_type, 'repeat_action_probability': 0.25},
-            max_episode_steps=10000,
-            nondeterministic=nondeterministic,
-        )
+#         register(
+#             id='{}-v0'.format(name),
+#             entry_point='gym.envs.atari:AtariEnv',
+#             kwargs={'game': game, 'obs_type': obs_type, 'repeat_action_probability': 0.25},
+#             max_episode_steps=10000,
+#             nondeterministic=nondeterministic,
+#         )
 
-        register(
-            id='{}-v4'.format(name),
-            entry_point='gym.envs.atari:AtariEnv',
-            kwargs={'game': game, 'obs_type': obs_type},
-            max_episode_steps=100000,
-            nondeterministic=nondeterministic,
-        )
+#         register(
+#             id='{}-v4'.format(name),
+#             entry_point='gym.envs.atari:AtariEnv',
+#             kwargs={'game': game, 'obs_type': obs_type},
+#             max_episode_steps=100000,
+#             nondeterministic=nondeterministic,
+#         )
 
-        # Standard Deterministic (as in the original DeepMind paper)
-        if game == 'space_invaders':
-            frameskip = 3
-        else:
-            frameskip = 4
+#         # Standard Deterministic (as in the original DeepMind paper)
+#         if game == 'space_invaders':
+#             frameskip = 3
+#         else:
+#             frameskip = 4
 
-        # Use a deterministic frame skip.
-        register(
-            id='{}Deterministic-v0'.format(name),
-            entry_point='gym.envs.atari:AtariEnv',
-            kwargs={'game': game, 'obs_type': obs_type, 'frameskip': frameskip, 'repeat_action_probability': 0.25},
-            max_episode_steps=100000,
-            nondeterministic=nondeterministic,
-        )
+#         # Use a deterministic frame skip.
+#         register(
+#             id='{}Deterministic-v0'.format(name),
+#             entry_point='gym.envs.atari:AtariEnv',
+#             kwargs={'game': game, 'obs_type': obs_type, 'frameskip': frameskip, 'repeat_action_probability': 0.25},
+#             max_episode_steps=100000,
+#             nondeterministic=nondeterministic,
+#         )
 
-        register(
-            id='{}Deterministic-v4'.format(name),
-            entry_point='gym.envs.atari:AtariEnv',
-            kwargs={'game': game, 'obs_type': obs_type, 'frameskip': frameskip},
-            max_episode_steps=100000,
-            nondeterministic=nondeterministic,
-        )
+#         register(
+#             id='{}Deterministic-v4'.format(name),
+#             entry_point='gym.envs.atari:AtariEnv',
+#             kwargs={'game': game, 'obs_type': obs_type, 'frameskip': frameskip},
+#             max_episode_steps=100000,
+#             nondeterministic=nondeterministic,
+#         )
 
-        register(
-            id='{}NoFrameskip-v0'.format(name),
-            entry_point='gym.envs.atari:AtariEnv',
-            kwargs={'game': game, 'obs_type': obs_type, 'frameskip': 1, 'repeat_action_probability': 0.25}, # A frameskip of 1 means we get every frame
-            max_episode_steps=frameskip * 100000,
-            nondeterministic=nondeterministic,
-        )
+#         register(
+#             id='{}NoFrameskip-v0'.format(name),
+#             entry_point='gym.envs.atari:AtariEnv',
+#             kwargs={'game': game, 'obs_type': obs_type, 'frameskip': 1, 'repeat_action_probability': 0.25}, # A frameskip of 1 means we get every frame
+#             max_episode_steps=frameskip * 100000,
+#             nondeterministic=nondeterministic,
+#         )
 
-        # No frameskip. (Atari has no entropy source, so these are
-        # deterministic environments.)
-        register(
-            id='{}NoFrameskip-v4'.format(name),
-            entry_point='gym.envs.atari:AtariEnv',
-            kwargs={'game': game, 'obs_type': obs_type, 'frameskip': 1}, # A frameskip of 1 means we get every frame
-            max_episode_steps=frameskip * 100000,
-            nondeterministic=nondeterministic,
-        )
+#         # No frameskip. (Atari has no entropy source, so these are
+#         # deterministic environments.)
+#         register(
+#             id='{}NoFrameskip-v4'.format(name),
+#             entry_point='gym.envs.atari:AtariEnv',
+#             kwargs={'game': game, 'obs_type': obs_type, 'frameskip': 1}, # A frameskip of 1 means we get every frame
+#             max_episode_steps=frameskip * 100000,
+#             nondeterministic=nondeterministic,
+#         )
 
 
 # Unit test
