@@ -1,4 +1,4 @@
-# A Dockerfile that sets up a full Gym install with test dependencies
+# A Dockerfile that sets up a full scilab install with test dependencies
 FROM ubuntu:18.04
 
 # Install keyboard-configuration separately to avoid travis hanging waiting for keyboard selection
@@ -38,10 +38,10 @@ RUN \
 # RUN echo $MUJOCO_KEY | base64 --decode > /root/.mujoco/mjkey.txt
 
 # install dependencies
-COPY . /usr/local/gym/
-RUN cd /usr/local/gym && \
+COPY . /usr/local/scilab/
+RUN cd /usr/local/scilab && \
     tox --notest 
 
-WORKDIR /usr/local/gym/
-ENTRYPOINT ["/usr/local/gym/bin/docker_entrypoint"]
+WORKDIR /usr/local/scilab/
+ENTRYPOINT ["/usr/local/scilab/bin/docker_entrypoint"]
 CMD ["tox"]

@@ -1,9 +1,9 @@
 **Status:** Maintenance (expect bug fixes and minor updates)
 
-OpenAI Gym
+SciLab
 **********
 
-**OpenAI Gym is a toolkit for developing and comparing reinforcement learning algorithms.** This is the ``gym`` open-source library, which gives you access to a standardized set of environments.
+**SciLab is a toolkit for developing and solving reinforcement learning environments for science.** This is the ``scilab`` open-source library, which gives you access to a standardized set of science environments, forked from <https://github.com/openai/gym>`.
 
 .. image:: https://travis-ci.org/openai/gym.svg?branch=master
     :target: https://travis-ci.org/openai/gym
