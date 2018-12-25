@@ -1,7 +1,7 @@
 import numpy as np
 
-from scilab import Env, spaces
-from scilab.utils import seeding
+from scigym import Env, spaces
+from scigym.utils import seeding
 
 def categorical_sample(prob_n, np_random):
     """

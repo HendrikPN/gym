@@ -1,8 +1,8 @@
-from scilab import logger
+from scigym import logger
 
-import scilab
-from scilab import error
-from scilab.utils import closer
+import scigym
+from scigym import error
+from scigym.utils import closer
 
 env_closer = closer.Closer()
 
@@ -140,7 +140,7 @@ class Env(object):
         """Completely unwrap this env.
 
         Returns:
-            scilab.Env: The base non-wrapped scilab.Env instance
+            scigym.Env: The base non-wrapped scigym.Env instance
         """
         return self
 
@@ -162,8 +162,8 @@ class GoalEnv(Env):
 
     def reset(self):
         # Enforce that each GoalEnv uses a Goal-compatible observation space.
-        if not isinstance(self.observation_space, scilab.spaces.Dict):
-            raise error.Error('GoalEnv requires an observation space of type scilab.spaces.Dict')
+        if not isinstance(self.observation_space, scigym.spaces.Dict):
+            raise error.Error('GoalEnv requires an observation space of type scigym.spaces.Dict')
         result = super(GoalEnv, self).reset()
         for key in ['observation', 'achieved_goal', 'desired_goal']:
             if key not in result:

@@ -2,7 +2,7 @@
 #
 from __future__ import print_function
 
-import sys, scilab, time
+import sys, scigym, time
 
 #
 # Test yourself as a learning agent! Pass environment name as a command-line argument, for example:
@@ -10,7 +10,7 @@ import sys, scilab, time
 # python keyboard_agent.py SpaceInvadersNoFrameskip-v4
 #
 
-env = scilab.make('CartPole-v0' if len(sys.argv)<2 else sys.argv[1]) #does this work?
+env = scigym.make('CartPole-v0' if len(sys.argv)<2 else sys.argv[1]) #does this work?
 
 if not hasattr(env.action_space, 'n'):
     raise Exception('Keyboard agent only supports discrete action spaces')

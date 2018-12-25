@@ -2,8 +2,8 @@ import numpy as np
 import sys
 from six import StringIO, b
 
-from scilab import utils
-from scilab.envs.toy_text import discrete
+from scigym import utils
+from scigym.envs.toy_text import discrete
 
 LEFT = 0
 DOWN = 1

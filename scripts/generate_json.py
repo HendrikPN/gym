@@ -1,14 +1,14 @@
 from __future__ import unicode_literals
-from scilab import envs, spaces, logger
+from scigym import envs, spaces, logger
 import json
 import os
 import sys
 import argparse
 
-from scilab.envs.tests.spec_list import should_skip_env_spec_for_tests
-from scilab.envs.tests.test_envs_semantics import generate_rollout_hash, hash_object
+from scigym.envs.tests.spec_list import should_skip_env_spec_for_tests
+from scigym.envs.tests.test_envs_semantics import generate_rollout_hash, hash_object
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), os.pardir, 'scilab', 'envs', 'tests')
+DATA_DIR = os.path.join(os.path.dirname(__file__), os.pardir, 'scigym', 'envs', 'tests')
 ROLLOUT_STEPS = 100
 episodes = ROLLOUT_STEPS
 steps = ROLLOUT_STEPS

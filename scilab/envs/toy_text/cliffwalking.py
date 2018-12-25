@@ -1,6 +1,6 @@
 import numpy as np
 import sys
-from scilab.envs.toy_text import discrete
+from scigym.envs.toy_text import discrete
 
 UP = 0
 RIGHT = 1

@@ -1,10 +1,10 @@
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
 import numpy as np
 from os import path
 
-class PendulumEnv(scilab.Env):
+class PendulumEnv(scigym.Env):
     metadata = {
         'render.modes' : ['human', 'rgb_array'],
         'video.frames_per_second' : 30
@@ -58,7 +58,7 @@ class PendulumEnv(scilab.Env):
     def render(self, mode='human'):
 
         if self.viewer is None:
-            from scilab.envs.classic_control import rendering
+            from scigym.envs.classic_control import rendering
             self.viewer = rendering.Viewer(500,500)
             self.viewer.set_bounds(-2.2,2.2,-2.2,2.2)
             rod = rendering.make_capsule(1, .2)

@@ -1,9 +1,9 @@
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
 
 
-class RouletteEnv(scilab.Env):
+class RouletteEnv(scigym.Env):
     """Simple roulette environment
 
     The roulette wheel has 37 spots. If the bet is 0 and a 0 comes up,

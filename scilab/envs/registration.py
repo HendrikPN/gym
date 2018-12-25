@@ -1,5 +1,5 @@
 import re
-from scilab import error, logger
+from scigym import error, logger
 
 # This format is true today, but it's *not* an official spec.
 # [username/](env-name)-v(version)    env-name is group 1, version is group 2
@@ -124,7 +124,7 @@ class EnvRegistry(object):
         if hasattr(env, "_reset") and hasattr(env, "_step") and not getattr(env, "_gym_disable_underscore_compat", False):
             patch_deprecated_methods(env)
         if (env.spec.timestep_limit is not None) and not spec.tags.get('vnc'):
-            from scilab.wrappers.time_limit import TimeLimit
+            from scigym.wrappers.time_limit import TimeLimit
             env = TimeLimit(env,
                             max_episode_steps=env.spec.max_episode_steps,
                             max_episode_seconds=env.spec.max_episode_seconds)

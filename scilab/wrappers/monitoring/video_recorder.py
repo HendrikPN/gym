@@ -7,7 +7,7 @@ import distutils.spawn, distutils.version
 import numpy as np
 from six import StringIO
 import six
-from scilab import error, logger
+from scigym import error, logger
 
 def touch(path):
     open(path, 'a').close()
@@ -221,7 +221,7 @@ class TextEncoder(object):
             "height": height,
             "duration": len(self.frames)*frame_duration,
             "command": "-",
-            "title": "scilab VideoRecorder episode",
+            "title": "scigym VideoRecorder episode",
             "env": {}, # could add some env metadata here
             "stdout": events,
         }

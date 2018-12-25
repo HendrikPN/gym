@@ -1,12 +1,12 @@
-import scilab
-from scilab import Wrapper
-from scilab import error, version, logger
+import scigym
+from scigym import Wrapper
+from scigym import error, version, logger
 import os, json, numpy as np, six
-from scilab.wrappers.monitoring import stats_recorder, video_recorder
-from scilab.utils import atomic_write, closer
-from scilab.utils.json_utils import json_encode_np
+from scigym.wrappers.monitoring import stats_recorder, video_recorder
+from scigym.utils import atomic_write, closer
+from scigym.utils.json_utils import json_encode_np
 
-FILE_PREFIX = 'scilabgym'
+FILE_PREFIX = 'sciencegym'
 MANIFEST_PREFIX = FILE_PREFIX + '.manifest'
 
 class Monitor(Wrapper):
@@ -59,14 +59,14 @@ class Monitor(Wrapper):
         Args:
             directory (str): A per-training run directory where to record stats.
             video_callable (Optional[function, False]): function that takes in the index of the episode and outputs a boolean, indicating whether we should record a video on this episode. The default (for video_callable is None) is to take perfect cubes, capped at 1000. False disables video recording.
-            force (bool): Clear out existing training data from this directory (by deleting every file prefixed with "scilabgym.").
+            force (bool): Clear out existing training data from this directory (by deleting every file prefixed with "sciencegym.").
             resume (bool): Retain the training data already in this directory, which will be merged with our new data
             write_upon_reset (bool): Write the manifest file on each reset. (This is currently a JSON file, so writing it is somewhat expensive.)
             uid (Optional[str]): A unique id used as part of the suffix for the file. By default, uses os.getpid().
             mode (['evaluation', 'training']): Whether this is an evaluation or training episode.
         """
         if self.env.spec is None:
-            logger.warn("Trying to monitor an environment which has no 'spec' set. This usually means you did not create it via 'scilab.make', and is recommended only for advanced users.")
+            logger.warn("Trying to monitor an environment which has no 'spec' set. This usually means you did not create it via 'scigym.make', and is recommended only for advanced users.")
             env_id = '(unknown)'
         else:
             env_id = self.env.spec.id
@@ -100,7 +100,7 @@ class Monitor(Wrapper):
 
         self.enabled = True
         self.directory = os.path.abspath(directory)
-        # We use the 'scilab-gym' prefix to determine if a file is
+        # We use the 'sci-gym' prefix to determine if a file is
         # ours
         self.file_prefix = FILE_PREFIX
         self.file_infix = '{}.{}'.format(self._monitor_id, uid if uid else os.getpid())
@@ -149,7 +149,7 @@ class Monitor(Wrapper):
         monitor_closer.unregister(self._monitor_id)
         self.enabled = False
 
-        logger.info('''Finished writing results. You can upload them to the scoreboard via scilab.upload(%r)''', self.directory)
+        logger.info('''Finished writing results. You can upload them to the scoreboard via scigym.upload(%r)''', self.directory)
 
     def _set_mode(self, mode):
         if mode == 'evaluation':
@@ -223,7 +223,7 @@ class Monitor(Wrapper):
 
     def _env_info(self):
         env_info = {
-            'scilab_version': version.VERSION,
+            'scigym_version': version.VERSION,
         }
         if self.env.spec:
             env_info['env_id'] = self.env.spec.id
@@ -375,7 +375,7 @@ def collapse_env_infos(env_infos, training_dir):
         if first != other:
             raise error.Error('Found two unequal env_infos: {} and {}. This usually indicates that your training directory {} has commingled results from multiple runs.'.format(first, other, training_dir))
 
-    for key in ['env_id', 'scilab_version']:
+    for key in ['env_id', 'scigym_version']:
         if key not in first:
             raise error.Error("env_info {} from training directory {} is missing expected key {}. This is unexpected and likely indicates a bug in gym.".format(first, training_dir, key))
     return first

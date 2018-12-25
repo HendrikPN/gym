@@ -1,7 +1,7 @@
-import scilab
+import scigym
 from collections import OrderedDict
 
-class Dict(scilab.Space):
+class Dict(scigym.Space):
     """
     A dictionary of simpler spaces.
 
@@ -39,7 +39,7 @@ class Dict(scilab.Space):
         if isinstance(spaces, list):
             spaces = OrderedDict(spaces)
         self.spaces = spaces
-        scilab.Space.__init__(self, None, None) # None for shape and dtype, since it'll require special handling
+        scigym.Space.__init__(self, None, None) # None for shape and dtype, since it'll require special handling
 
     def sample(self):
         return OrderedDict([(k, space.sample()) for k, space in self.spaces.items()])

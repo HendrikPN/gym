@@ -1,9 +1,9 @@
 import numpy as np
 
-import scilab
-from scilab import logger
+import scigym
+from scigym import logger
 
-class Box(scilab.Space):
+class Box(scigym.Space):
     """
     A box in R^n.
     I.e., each coordinate is bounded.
@@ -29,13 +29,13 @@ class Box(scilab.Space):
                 dtype = np.uint8
             else:
                 dtype = np.float32
-            logger.warn("scilab.spaces.Box autodetected dtype as {}. Please provide explicit dtype.".format(dtype))
+            logger.warn("scigym.spaces.Box autodetected dtype as {}. Please provide explicit dtype.".format(dtype))
         self.low = low.astype(dtype)
         self.high = high.astype(dtype)
-        scilab.Space.__init__(self, shape, dtype)
+        scigym.Space.__init__(self, shape, dtype)
 
     def sample(self):
-        return scilab.spaces.np_random.uniform(low=self.low, high=self.high + (0 if self.dtype.kind == 'f' else 1), size=self.low.shape).astype(self.dtype)
+        return scigym.spaces.np_random.uniform(low=self.low, high=self.high + (0 if self.dtype.kind == 'f' else 1), size=self.low.shape).astype(self.dtype)
 
     def contains(self, x):
         return x.shape == self.shape and (x >= self.low).all() and (x <= self.high).all()

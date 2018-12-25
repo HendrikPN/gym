@@ -1,6 +1,6 @@
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
 
 def cmp(a, b):
     return float(a > b) - float(a < b)
@@ -39,7 +39,7 @@ def is_natural(hand):  # Is this hand a natural blackjack?
     return sorted(hand) == [1, 10]
 
 
-class BlackjackEnv(scilab.Env):
+class BlackjackEnv(scigym.Env):
     """Simple blackjack environment
 
     Blackjack is a card game where the goal is to obtain cards that sum to as

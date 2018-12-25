@@ -1,6 +1,6 @@
-import scilab
+import scigym
 
-class Tuple(scilab.Space):
+class Tuple(scigym.Space):
     """
     A tuple (i.e., product) of simpler spaces
 
@@ -9,7 +9,7 @@ class Tuple(scilab.Space):
     """
     def __init__(self, spaces):
         self.spaces = spaces
-        scilab.Space.__init__(self, None, None)
+        scigym.Space.__init__(self, None, None)
 
     def sample(self):
         return tuple([space.sample() for space in self.spaces])

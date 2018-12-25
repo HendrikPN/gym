@@ -4,8 +4,8 @@ import shutil
 import tempfile
 import numpy as np
 
-import scilab
-from scilab.wrappers.monitoring.video_recorder import VideoRecorder
+import scigym
+from scigym.wrappers.monitoring.video_recorder import VideoRecorder
 
 class BrokenRecordableEnv(object):
     metadata = {'render.modes': [None, 'rgb_array']}
@@ -20,7 +20,7 @@ class UnrecordableEnv(object):
         pass
 
 def test_record_simple():
-    env = scilab.make("CartPole-v1")
+    env = scigym.make("CartPole-v1")
     rec = VideoRecorder(env)
     env.reset()
     rec.capture_frame()
@@ -55,7 +55,7 @@ def test_record_breaking_render_method():
     assert not os.path.exists(rec.path)
 
 def test_text_envs():
-    env = scilab.make('FrozenLake-v0')
+    env = scigym.make('FrozenLake-v0')
     video = VideoRecorder(env)
     try:
         env.reset()

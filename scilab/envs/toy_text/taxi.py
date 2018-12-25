@@ -1,7 +1,7 @@
 import sys
 from six import StringIO
-from scilab import utils
-from scilab.envs.toy_text import discrete
+from scigym import utils
+from scigym.envs.toy_text import discrete
 import numpy as np
 
 MAP = [

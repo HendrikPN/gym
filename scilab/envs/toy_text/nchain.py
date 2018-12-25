@@ -1,8 +1,8 @@
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
 
-class NChainEnv(scilab.Env):
+class NChainEnv(scigym.Env):
     """n-Chain environment
 
     This game presents moves along a linear chain of states, with two actions:

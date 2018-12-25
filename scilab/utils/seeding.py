@@ -6,7 +6,7 @@ from six import integer_types
 import struct
 import sys
 
-from scilab import error
+from scigym import error
 
 def np_random(seed=None):
     if seed is not None and not (isinstance(seed, integer_types) and 0 <= seed):

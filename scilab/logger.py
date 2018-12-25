@@ -1,6 +1,6 @@
 import warnings
 
-from scilab.utils import colorize
+from scigym.utils import colorize
 
 DEBUG = 10
 INFO = 20

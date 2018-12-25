@@ -1,11 +1,11 @@
 import numpy as np
 
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
 
 
-class GuessingGame(scilab.Env):
+class GuessingGame(scigym.Env):
     """Number guessing game
 
     The object of the game is to guess within 1% of the randomly chosen number

@@ -1,4 +1,4 @@
-from scilab import core
+from scigym import core
 
 class ArgumentEnv(core.Env):
     calls = 0

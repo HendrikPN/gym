@@ -1,13 +1,13 @@
-import scilab
+import scigym
 import numpy as np
 
-class MultiBinary(scilab.Space):
+class MultiBinary(scigym.Space):
     def __init__(self, n):
         self.n = n
-        scilab.Space.__init__(self, (self.n,), np.int8)
+        scigym.Space.__init__(self, (self.n,), np.int8)
 
     def sample(self):
-        return scilab.spaces.np_random.randint(low=0, high=2, size=self.n).astype(self.dtype)
+        return scigym.spaces.np_random.randint(low=0, high=2, size=self.n).astype(self.dtype)
 
     def contains(self, x):
         return ((x==0) | (x==1)).all()

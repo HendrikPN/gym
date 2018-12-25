@@ -4,7 +4,7 @@ from copy import copy
 import numpy as np
 import pytest
 
-from scilab.spaces import Tuple, Box, Discrete, MultiDiscrete, MultiBinary, Dict
+from scigym.spaces import Tuple, Box, Discrete, MultiDiscrete, MultiBinary, Dict
 
 
 @pytest.mark.parametrize("space", [

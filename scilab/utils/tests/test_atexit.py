@@ -1,4 +1,4 @@
-from scilab.utils.closer import Closer
+from scigym.utils.closer import Closer
 
 class Closeable(object):
     close_called = False

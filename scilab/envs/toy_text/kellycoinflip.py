@@ -3,17 +3,17 @@ from scipy.stats import genpareto
 import numpy as np
 import numpy.random
 
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
-from scilab.spaces import prng
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
+from scigym.spaces import prng
 
 
 def flip(edge, np_random):
     return np_random.uniform() < edge
 
 
-class KellyCoinflipEnv(scilab.Env):
+class KellyCoinflipEnv(scigym.Env):
     """The Kelly coinflip game is a simple gambling introduced by Haghani & Dewey 2016's 'Rational Decision-Making Under Uncertainty: Observed Betting Patterns on a Biased Coin' (https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2856963), to test human decision-making in a setting like that of the stock market: positive expected value but highly stochastic; they found many subjects performed badly, often going broke, even though optimal play would reach the maximum with ~95% probability. In the coinflip game, the player starts with $25.00 to gamble over 300 rounds; each round, they can bet anywhere up to their net worth (in penny increments), and then a coin is flipped; with P=0.6, the player wins twice what they bet, otherwise, they lose it. $250 is the maximum players are allowed to have. At the end of the 300 rounds, they keep whatever they have. The human subjects earned an average of $91; a simple use of the Kelly criterion (https://en.wikipedia.org/wiki/Kelly_criterion), giving a strategy of betting 20% until the cap is hit, would earn $240; a decision tree analysis shows that optimal play earns $246 (https://www.gwern.net/Coin-flip). The game short-circuits when either wealth = $0 (since one can never recover) or wealth = cap (trivial optimal play: one simply bets nothing thereafter). In this implementation, we default to the paper settings of $25, 60% odds, wealth cap of $250, and 300 rounds. To specify the action space in advance, we multiply the wealth cap (in dollars) by 100 (to allow for all penny bets); should one attempt to bet more money than one has, it is rounded down to one's net worth. (Alternately, a mistaken bet could end the episode immediately; it's not clear to me which version would be better.) For a harder version which randomizes the 3 key parameters, see the Generalized Kelly coinflip game."""
     metadata = {'render.modes': ['human']}
     def __init__(self, initialWealth=25.0, edge=0.6, maxWealth=250.0, maxRounds=300):
@@ -68,7 +68,7 @@ class KellyCoinflipEnv(scilab.Env):
     def render(self, mode='human'):
         print("Current wealth: ", self.wealth, "; Rounds left: ", self.rounds)
 
-class KellyCoinflipGeneralizedEnv(scilab.Env):
+class KellyCoinflipGeneralizedEnv(scigym.Env):
     """The Generalized Kelly coinflip game is an extension by ArthurB & Gwern Branwen which expands the Kelly coinflip game MDP into a POMDP, where the 3 key parameters (edge, maximum wealth, and number of rounds) are unknown random variables drawn from 3 distributions: a Beta(7,3) for the coinflip edge 0-1, a N(300,25) the total number of rounds, and a Pareto(5,200) for the wealth cap. These distributions are chosen to be conjugate & easily updatable, to allow for inference (other choices like the geometric for number of rounds wouldn't make observations informative), and to loosely reflect what a human might expect in the original Kelly coinflip game given that the number of rounds wasn't strictly fixed and they weren't told the wealth cap until they neared it. With these particular distributions, the entire history of the game can be summarized into a few sufficient statistics of rounds-elapsed/wins/losses/max-wealth-ever-reached, from which the Bayes-optimal decision can (in theory) be made; to avoid all agents having to tediously track those sufficient statistics manually in the same way, the observation space is augmented from wealth/rounds-left (rounds-left is deleted because it is a hidden variable) to current-wealth/rounds-elapsed/wins/losses/maximum-observed-wealth. The simple Kelly coinflip game can easily be solved by calculating decision trees, but the Generalized Kelly coinflip game may be intractable (although the analysis for the edge case alone suggests that the Bayes-optimal value may be very close to what one would calculate using a decision tree for any specific case), and represents a good challenge for RL agents."""
     metadata = {'render.modes': ['human']}
     def __init__(self, initialWealth=25.0, edgePriorAlpha=7, edgePriorBeta=3, maxWealthAlpha=5.0, maxWealthM=200.0, maxRoundsMean=300.0, maxRoundsSD=25.0, reseed=True):

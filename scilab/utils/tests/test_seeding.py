@@ -1,5 +1,5 @@
-from scilab import error
-from scilab.utils import seeding
+from scigym import error
+from scigym.utils import seeding
 
 def test_invalid_seeds():
     for seed in [-1, 'test']:

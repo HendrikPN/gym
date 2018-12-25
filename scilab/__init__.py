@@ -3,12 +3,12 @@ import os
 import sys
 import warnings
 
-from scilab import error
-from scilab.utils import reraise
-from scilab.version import VERSION as __version__
+from scigym import error
+from scigym.utils import reraise
+from scigym.version import VERSION as __version__
 
-from scilab.core import Env, GoalEnv, Space, Wrapper, ObservationWrapper, ActionWrapper, RewardWrapper
-from scilab.envs import make, spec
-from scilab import logger
+from scigym.core import Env, GoalEnv, Space, Wrapper, ObservationWrapper, ActionWrapper, RewardWrapper
+from scigym.envs import make, spec
+from scigym import logger
 
 __all__ = ["Env", "Space", "Wrapper", "make", "spec"]

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-import scilab
-from scilab import spaces, envs
+import scigym
+from scigym import spaces, envs
 import argparse
 import numpy as np
 import itertools

@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
-from scilab import spaces
-from scilab.envs.tests.spec_list import spec_list
+from scigym import spaces
+from scigym.envs.tests.spec_list import spec_list
 
 @pytest.mark.parametrize("spec", spec_list)
 def test_env(spec):

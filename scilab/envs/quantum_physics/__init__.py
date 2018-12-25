@@ -1,1 +1,1 @@
-from scilab.envs.quantum_physics.inverse_cartpole import InverseCartPoleEnv
+from scigym.envs.quantum_physics.inverse_cartpole import InverseCartPoleEnv

@@ -1,7 +1,7 @@
 import numpy as np
-import scilab
+import scigym
 
-class Discrete(scilab.Space):
+class Discrete(scigym.Space):
     """
     {0,1,...,n-1}
 
@@ -10,10 +10,10 @@ class Discrete(scilab.Space):
     """
     def __init__(self, n):
         self.n = n
-        scilab.Space.__init__(self, (), np.int64)
+        scigym.Space.__init__(self, (), np.int64)
 
     def sample(self):
-        return scilab.spaces.np_random.randint(self.n)
+        return scigym.spaces.np_random.randint(self.n)
 
     def contains(self, x):
         if isinstance(x, int):

@@ -3,7 +3,7 @@ Task is to reverse content over the input tape.
 http://arxiv.org/abs/1511.07275
 """
 
-from scilab.envs.algorithmic import algorithmic_env
+from scigym.envs.algorithmic import algorithmic_env
 
 class ReverseEnv(algorithmic_env.TapeAlgorithmicEnv):
     MIN_REWARD_SHORTFALL_FOR_PROMOTION = -.1

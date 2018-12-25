@@ -30,9 +30,9 @@ been consistently solved over some window of episodes, the environment will
 increase the average length of generated strings. Typical env specs require
 leveling up many times to reach their reward threshold.
 """
-from scilab import Env, logger
-from scilab.spaces import Discrete, Tuple
-from scilab.utils import colorize, seeding
+from scigym import Env, logger
+from scigym.spaces import Discrete, Tuple
+from scigym.utils import colorize, seeding
 import numpy as np
 from six import StringIO
 import sys

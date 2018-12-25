@@ -1,5 +1,5 @@
 import time
-from scilab import Wrapper, logger
+from scigym import Wrapper, logger
 
 class TimeLimit(Wrapper):
     def __init__(self, env, max_episode_seconds=None, max_episode_steps=None):

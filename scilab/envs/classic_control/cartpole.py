@@ -5,12 +5,12 @@ permalink: https://perma.cc/C9ZM-652R
 """
 
 import math
-import scilab
-from scilab import spaces, logger
-from scilab.utils import seeding
+import scigym
+from scigym import spaces, logger
+from scigym.utils import seeding
 import numpy as np
 
-class CartPoleEnv(scilab.Env):
+class CartPoleEnv(scigym.Env):
     """
     Description:
         A pole is attached by an un-actuated joint to a cart, which moves along a frictionless track. The pendulum starts upright, and the goal is to prevent it from falling over by increasing and reducing the cart's velocity.
@@ -147,7 +147,7 @@ class CartPoleEnv(scilab.Env):
         cartheight = 30.0
 
         if self.viewer is None:
-            from scilab.envs.classic_control import rendering
+            from scigym.envs.classic_control import rendering
             self.viewer = rendering.Viewer(screen_width, screen_height)
             l,r,t,b = -cartwidth/2, cartwidth/2, cartheight/2, -cartheight/2
             axleoffset =cartheight/4.0

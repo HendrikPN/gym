@@ -10,8 +10,8 @@ import hashlib
 import os
 
 import pytest
-from scilab import spaces, logger
-from scilab.envs.tests.spec_list import spec_list
+from scigym import spaces, logger
+from scigym.envs.tests.spec_list import spec_list
 
 DATA_DIR = os.path.dirname(__file__)
 ROLLOUT_STEPS = 100

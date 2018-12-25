@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from scilab import error, envs
-from scilab.envs import registration
-from scilab.envs.classic_control import cartpole
+from scigym import error, envs
+from scigym.envs import registration
+from scigym.envs.classic_control import cartpole
 
 def test_make():
     env = envs.make('CartPole-v0')

@@ -1,4 +1,4 @@
-from scilab.envs import algorithmic as alg
+from scigym.envs import algorithmic as alg
 import unittest
 
 # All concrete subclasses of AlgorithmicEnv

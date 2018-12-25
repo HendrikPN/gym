@@ -1,11 +1,11 @@
-import scilab
+import scigym
 import numpy as np
 
 
 __all__ = ['FlattenDictWrapper']
 
 
-class FlattenDictWrapper(scilab.ObservationWrapper):
+class FlattenDictWrapper(scigym.ObservationWrapper):
     """Flattens selected keys of a Dict observation space into
     an array.
     """
@@ -18,7 +18,7 @@ class FlattenDictWrapper(scilab.ObservationWrapper):
         for key in dict_keys:
             shape = self.env.observation_space.spaces[key].shape
             size += np.prod(shape)
-        self.observation_space = scilab.spaces.Box(-np.inf, np.inf, shape=(size,), dtype='float32')
+        self.observation_space = scigym.spaces.Box(-np.inf, np.inf, shape=(size,), dtype='float32')
 
     def observation(self, observation):
         assert isinstance(observation, dict)

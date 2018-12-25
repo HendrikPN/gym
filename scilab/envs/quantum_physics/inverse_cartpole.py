@@ -13,12 +13,12 @@ permalink: https://perma.cc/C9ZM-652R
 """
 
 import math
-import scilab
-from scilab import spaces, logger
-from scilab.utils import seeding
+import scigym
+from scigym import spaces, logger
+from scigym.utils import seeding
 import numpy as np
 
-class InverseCartPoleEnv(scilab.Env):
+class InverseCartPoleEnv(scigym.Env):
     metadata = {
         'render.modes': ['human', 'rgb_array'],
         'video.frames_per_second' : 50
@@ -187,7 +187,7 @@ class InverseCartPoleEnv(scilab.Env):
 
         if self.viewer is None: 
             #if the viewer is currently off, initialize a bunch of elements
-            from scilab.envs.classic_control import rendering
+            from scigym.envs.classic_control import rendering
             self.viewer = rendering.Viewer(screen_width, screen_height)
             l,r,t,b = -cartwidth/2, cartwidth/2, cartheight/2, -cartheight/2
             axleoffset =cartheight/4.0
@@ -234,7 +234,7 @@ class InverseCartPoleEnv(scilab.Env):
 
     def add_display(self, posx, rgb):
         """Within render, add a column for displaying some scalar variable."""
-        from scilab.envs.classic_control import rendering
+        from scigym.envs.classic_control import rendering
         l,r,t,b = posx-10, posx+10, 195, 205
         valuebar = rendering.FilledPolygon([(l,b), (l,t), (r,t), (r,b)])
         for offset in [0,50,100,150]:

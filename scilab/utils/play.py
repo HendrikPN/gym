@@ -1,4 +1,4 @@
-import scilab
+import scigym
 import pygame
 import sys
 import time
@@ -81,7 +81,7 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
     """
 
     obs_s = env.observation_space
-    assert type(obs_s) == scilab.spaces.box.Box
+    assert type(obs_s) == scigym.spaces.box.Box
     assert len(obs_s.shape) == 2 or (len(obs_s.shape) == 3 and obs_s.shape[2] in [1,3])
 
     if keys_to_action is None:
@@ -182,5 +182,5 @@ class PlayPlot(object):
 
 
 if __name__ == '__main__':
-    env = scilab.make("Cartpole-v0") # does this work??
+    env = scigym.make("Cartpole-v0") # does this work??
     play(env, zoom=4, fps=60)

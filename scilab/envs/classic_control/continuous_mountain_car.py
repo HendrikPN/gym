@@ -18,11 +18,11 @@ import math
 
 import numpy as np
 
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
 
-class Continuous_MountainCarEnv(scilab.Env):
+class Continuous_MountainCarEnv(scigym.Env):
     metadata = {
         'render.modes': ['human', 'rgb_array'],
         'video.frames_per_second': 30
@@ -99,7 +99,7 @@ class Continuous_MountainCarEnv(scilab.Env):
 
 
         if self.viewer is None:
-            from scilab.envs.classic_control import rendering
+            from scigym.envs.classic_control import rendering
             self.viewer = rendering.Viewer(screen_width, screen_height)
             xs = np.linspace(self.min_position, self.max_position, 100)
             ys = self._height(xs)

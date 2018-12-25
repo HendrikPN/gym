@@ -1,11 +1,11 @@
 import numpy as np
 
-import scilab
-from scilab import spaces
-from scilab.utils import seeding
+import scigym
+from scigym import spaces
+from scigym.utils import seeding
 
 
-class HotterColder(scilab.Env):
+class HotterColder(scigym.Env):
     """Hotter Colder
     The goal of hotter colder is to guess closer to a randomly selected number
 

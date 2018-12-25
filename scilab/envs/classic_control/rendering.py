@@ -11,8 +11,8 @@ if "Apple" in sys.version:
         os.environ['DYLD_FALLBACK_LIBRARY_PATH'] += ':/usr/lib'
         # (JDS 2016/04/15): avoid bug on Anaconda 2.3.0 / Yosemite
 
-from scilab.utils import reraise
-from scilab import error
+from scigym.utils import reraise
+from scigym import error
 
 try:
     import pyglet

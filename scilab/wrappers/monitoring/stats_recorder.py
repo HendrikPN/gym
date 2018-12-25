@@ -2,9 +2,9 @@ import json
 import os
 import time
 
-from scilab import error
-from scilab.utils import atomic_write
-from scilab.utils.json_utils import json_encode_np
+from scigym import error
+from scigym.utils import atomic_write
+from scigym.utils.json_utils import json_encode_np
 
 class StatsRecorder(object):
     def __init__(self, directory, file_prefix, autoreset=False, env_id=None):
