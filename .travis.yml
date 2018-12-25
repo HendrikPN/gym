@@ -9,8 +9,8 @@ env:
 
 install: "" # so travis doesn't do pip install requirements.txt
 script:
-  - docker build -f test.dockerfile.${UBUNTU_VER} -t scilab-test .
-  - docker run scilab-test tox
+  - docker build -f test.dockerfile.${UBUNTU_VER} -t scigym-test .
+  - docker run scigym-test tox
 
 deploy:
     provider: pypi
