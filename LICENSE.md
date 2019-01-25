@@ -1,8 +1,8 @@
-# gym
+# scigym
 
 The MIT License
 
-Copyright (c) 2016 OpenAI (https://openai.com)
+Copyright (c) for portions of project SciGym are held by OpenAI (https://openai.com) (c) 2016 as part of project OpenAI Gym (https://github.com/openai/gym). All other copyright for project SciGym are held by Hendrik Poulsen Nautrup (c) 2019.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,3 +21,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+
+# Other Environments
+
+Various environment models are derived from elsewhere under different licences as specified in the following.
