@@ -23,6 +23,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-# Other Environments
+# Special Environments
 
 Various environment models are derived from elsewhere under different licences as specified in the following.
