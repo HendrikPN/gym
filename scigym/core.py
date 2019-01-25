@@ -9,7 +9,7 @@ env_closer = closer.Closer()
 # Env-related abstractions
 
 class Env(object):
-    """The main OpenAI Gym class. It encapsulates an environment with
+    """The main SciGym class. It encapsulates an environment with
     arbitrary behind-the-scenes dynamics. An environment can be
     partially or fully observed.
 

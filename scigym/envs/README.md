@@ -3,27 +3,25 @@
 These are the core integrated environments. Note that we may later
 restructure any of the files, but will keep the environments available
 at the relevant package's top-level. So for example, you should access
-`AntEnv` as follows:
+`CartPoleEnv` as follows:
 
 ```
 # Will be supported in future releases
-from gym.envs import mujoco
-mujoco.AntEnv
+from scigym.envs import classic_control
+classic_control.cartpole
 ```
 
 Rather than:
 
 ```
 # May break in future releases
-from gym.envs.mujoco import ant
-ant.AntEnv
+from scigym.envs.classic_control import cartpole
+cartpole.CartPoleEnv
 ```
 
-## How to create new environments for Gym
+## How to create new environments for SciGym
 
-* Create a new repo called gym-foo, which should also be a PIP package.
-
-* A good example is https://github.com/openai/gym-soccer.
+* Create a new repo called gym-foo, which should also be a PIP package. A simple template can be found [here](https://github.com/HendrikPN/gym-template).
 
 * It should have at least the following files:
   ```sh
@@ -45,13 +43,13 @@ ant.AntEnv
 
   setup(name='gym_foo',
         version='0.0.1',
-        install_requires=['gym']  # And any other dependencies foo needs
+        install_requires=['scigym']  # And any other dependencies foo needs
   )  
   ```
 
 * `gym-foo/gym_foo/__init__.py` should have:
   ```python
-  from gym.envs.registration import register
+  from scigym.envs.registration import register
 
   register(
       id='foo-v0',
@@ -71,11 +69,11 @@ ant.AntEnv
 
 * `gym-foo/gym_foo/envs/foo_env.py` should look something like:
   ```python
-  import gym
-  from gym import error, spaces, utils
-  from gym.utils import seeding
+  import scigym
+  from scigym import error, spaces, utils
+  from scigym.utils import seeding
 
-  class FooEnv(gym.Env):
+  class FooEnv(scigym.Env):
     metadata = {'render.modes': ['human']}
 
     def __init__(self):
@@ -90,24 +88,13 @@ ant.AntEnv
 
 ## How to add new environments to Gym, within this repo (not recommended for new environments)
 
-1. Write your environment in an existing collection or a new collection. All collections are subfolders of `/gym/envs'.
-2. Import your environment into the `__init__.py` file of the collection. This file will be located at `/gym/envs/my_collection/__init__.py`. Add `from gym.envs.my_collection.my_awesome_env import MyEnv` to this file.
-3. Register your env in `/gym/envs/__init__.py`:
+1. Write your environment in an existing collection or a new collection. All collections are subfolders of `/scigym/envs'.
+2. Import your environment into the `__init__.py` file of the collection. This file will be located at `/scigym/envs/my_collection/__init__.py`. Add `from scigym.envs.my_collection.my_awesome_env import MyEnv` to this file.
+3. Register your env in `/scigym/envs/__init__.py`:
 
  ```
 register(
 		id='MyEnv-v0',
-		entry_point='gym.envs.my_collection:MyEnv',
-)
-```
-
-4. Add your environment to the scoreboard in `/gym/scoreboard/__init__.py`:
-
- ```
-add_task(
-		id='MyEnv-v0',
-		summary="Super cool environment",
-		group='my_collection',
-		contributor='mygithubhandle',
+		entry_point='scigym.envs.my_collection:MyEnv',
 )
 ```

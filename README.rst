@@ -1,28 +1,19 @@
-**Status:** Maintenance (expect bug fixes and minor updates)
+**Status:** Development (expect bug fixes, minor updates and environment changes)
 
-scigym
+SciGym
 **********
 
-**scigym is a toolkit for developing and solving reinforcement learning environments for science.** This is the ``scigym`` open-source library, which gives you access to a standardized set of science environments, forked from <https://github.com/openai/gym>`.
+**`SciGym <https://scigym.ai>`_ is a toolkit for developing and solving reinforcement learning environments for science.** This is the ``scigym`` open-source library, which gives you access to a standardized set of science environments. This project was forked from <https://github.com/openai/gym>`.
 
-.. image:: https://travis-ci.org/openai/gym.svg?branch=master
-    :target: https://travis-ci.org/openai/gym
+.. image:: https://travis-ci.org/HendrikPN/gym.svg?branch=master
+    :target: https://travis-ci.org/HendrikPN/gym
 
 `See What's New section below <#what-s-new>`_
 
 ``gym`` makes no assumptions about the structure of your agent, and is compatible with any numerical computation library, such as TensorFlow or Theano. You can use it from Python code, and soon from other languages.
 
 If you're not sure where to start, we recommend beginning with the
-`docs <https://gym.openai.com/docs>`_ on our site. See also the `FAQ <https://github.com/openai/gym/wiki/FAQ>`_.
-
-A whitepaper for OpenAI Gym is available at http://arxiv.org/abs/1606.01540, and here's a BibTeX entry that you can use to cite it in a publication::
-
-  @misc{1606.01540,
-    Author = {Greg Brockman and Vicki Cheung and Ludwig Pettersson and Jonas Schneider and John Schulman and Jie Tang and Wojciech Zaremba},
-    Title = {OpenAI Gym},
-    Year = {2016},
-    Eprint = {arXiv:1606.01540},
-  }
+`getting started <https://scigym.ai/getting_started>`_ on our site.
 
 .. contents:: **Contents of this document**
    :depth: 2
@@ -36,7 +27,7 @@ algorithm you are writing). The agent sends `actions` to the
 environment, and the environment replies with `observations` and
 `rewards` (that is, a score).
 
-The core `gym` interface is `Env <https://github.com/openai/gym/blob/master/gym/core.py>`_, which is
+The core `scigym` interface is `Env <https://github.com/HendrikPN/gym/blob/master/gym/core.py>`_, which is
 the unified environment interface. There is no interface for agents;
 that part is left to you. The following are the ``Env`` methods you
 should know:
@@ -48,11 +39,11 @@ should know:
 Installation
 ============
 
-You can perform a minimal install of ``gym`` with:
+You can perform a minimal install of ``scigym`` with:
 
 .. code:: shell
 
-    git clone https://github.com/openai/gym.git
+    git clone https://github.com/HendrikPN/gym.git
     cd gym
     pip install -e .
 
@@ -60,7 +51,7 @@ If you prefer, you can do a minimal install of the packaged version directly fro
 
 .. code:: shell
 
-    pip install gym
+    pip install scigym
 
 You'll be able to run a few environments right away:
 
@@ -69,46 +60,7 @@ You'll be able to run a few environments right away:
 - classic_control (you'll need ``pyglet`` to render though)
 
 We recommend playing with those environments at first, and then later
-installing the dependencies for the remaining environments.
-
-Installing everything (DEPRECATED SINCE REMOVAL?)
----------------------
-
-To install the full set of environments, you'll need to have some system
-packages installed. We'll build out the list here over time; please let us know
-what you end up installing on your platform. Also, take a look at the docker files (test.dockerfile.xx.xx) to 
-see the composition of our CI-tested images. 
-
-On OSX:
-
-.. code:: shell
-
-    brew install cmake boost boost-python sdl2 swig wget
-
-On Ubuntu 14.04 (non-mujoco only):
-
-.. code:: shell
-
-    apt-get install libjpeg-dev cmake swig python-pyglet python3-opengl libboost-all-dev \
-            libsdl2-2.0.0 libsdl2-dev libglu1-mesa libglu1-mesa-dev libgles2-mesa-dev \
-            freeglut3 xvfb libav-tools
-
-
-On Ubuntu 16.04:
-
-.. code:: shell
-
-    apt-get install -y python-pyglet python3-opengl zlib1g-dev libjpeg-dev patchelf \
-            cmake swig libboost-all-dev libsdl2-dev libosmesa6-dev xvfb ffmpeg
-
-On Ubuntu 18.04:
-
-.. code:: shell
-
-    apt install -y python3-dev zlib1g-dev libjpeg-dev cmake swig python-pyglet python3-opengl libboost-all-dev libsdl2-dev \
-        libosmesa6-dev patchelf ffmpeg xvfb
-
-Once you're ready to install everything, run ``pip install -e '.[all]'`` (or ``pip install 'gym[all]'``).
+installing the dependencies for the remaining science environments.
 
 Supported systems
 -----------------
@@ -119,8 +71,7 @@ We currently support Linux and OS X running Python 2.7 or 3.5. Some users on OSX
 
     brew install boost-python --with-python3
 
-If you want to access Gym from languages other than python, we have limited support for non-python
-frameworks, such as lua/Torch, using the OpenAI Gym `HTTP API <https://github.com/openai/gym-http-api>`_.
+Unofrtunately, there exists no support for non-python frameworks if you want to access SciGym from languages other than python.
 
 Pip version
 -----------
@@ -129,7 +80,7 @@ To run ``pip install -e '.[all]'``, you'll need a semi-recent pip.
 Please make sure your pip is at least at version ``1.5.0``. You can
 upgrade using the following: ``pip install --ignore-installed
 pip``. Alternatively, you can open `setup.py
-<https://github.com/openai/gym/blob/master/setup.py>`_ and
+<https://github.com/HendrikPN/gym/blob/master/setup.py>`_ and
 install the dependencies by hand.
 
 Rendering on a server
@@ -148,17 +99,17 @@ Installing dependencies for specific environments
 
 If you'd like to install the dependencies for only specific
 environments, see `setup.py
-<https://github.com/openai/gym/blob/master/setup.py>`_. We
+<https://github.com/HendrikPN/gym/blob/master/setup.py>`_. We
 maintain the lists of dependencies on a per-environment group basis.
 
 Environments
 ============
 
 The code for each environment group is housed in its own subdirectory
-`gym/envs
-<https://github.com/openai/gym/blob/master/gym/envs>`_. The
-specification of each task is in `gym/envs/__init__.py
-<https://github.com/openai/gym/blob/master/gym/envs/__init__.py>`_. It's
+`scigym/envs
+<https://github.com/HendrikPN/gym/blob/master/scigym/envs>`_. The
+specification of each task is in `scigym/envs/__init__.py
+<https://github.com/HendrikPN/gym/blob/master/scigym/envs/__init__.py>`_. It's
 worth browsing through both.
 
 Algorithmic
@@ -169,8 +120,8 @@ sequence.
 
 .. code:: python
 
-    import gym
-    env = gym.make('Copy-v0')
+    import scigym
+    env = scigym.make('Copy-v0')
     env.reset()
     env.render()
 
@@ -181,20 +132,10 @@ These are a variety of classic control tasks, which would appear in a typical re
 
 .. code:: python
 
-    import gym
-    env = gym.make('CartPole-v0')
+    import scigym
+    env = scigym.make('CartPole-v0')
     env.reset()
     env.render()
-
-You can also find additional details in the accompanying `technical report <https://arxiv.org/abs/1802.09464>`_ and `blog post <https://blog.openai.com/ingredients-for-robotics-research/>`_.
-If you use these environments, you can cite them as follows::
-
-  @misc{1802.09464,
-    Author = {Matthias Plappert and Marcin Andrychowicz and Alex Ray and Bob McGrew and Bowen Baker and Glenn Powell and Jonas Schneider and Josh Tobin and Maciek Chociej and Peter Welinder and Vikash Kumar and Wojciech Zaremba},
-    Title = {Multi-Goal Reinforcement Learning: Challenging Robotics Environments and Request for Research},
-    Year = {2018},
-    Eprint = {arXiv:1802.09464},
-  }
 
 Toy text
 --------
@@ -203,8 +144,8 @@ Toy environments which are text-based. There's no extra dependency to install, s
 
 .. code:: python
 
-    import gym
-    env = gym.make('FrozenLake-v0')
+    import scigym
+    env = scigym.make('FrozenLake-v0')
     env.reset()
     env.render()
 
@@ -213,9 +154,9 @@ Examples
 
 See the ``examples`` directory.
 
-- Run `examples/agents/random_agent.py <https://github.com/openai/gym/blob/master/examples/agents/random_agent.py>`_ to run an simple random agent.
-- Run `examples/agents/cem.py <https://github.com/openai/gym/blob/master/examples/agents/cem.py>`_ to run an actual learning agent (using the cross-entropy method).
-- Run `examples/scripts/list_envs <https://github.com/openai/gym/blob/master/examples/scripts/list_envs>`_ to generate a list of all environments.
+- Run `examples/agents/random_agent.py <https://github.com/HendrikPN/gym/blob/master/examples/agents/random_agent.py>`_ to run an simple random agent.
+- Run `examples/agents/cem.py <https://github.com/HendrikPN/gym/blob/master/examples/agents/cem.py>`_ to run an actual learning agent (using the cross-entropy method).
+- Run `examples/scripts/list_envs <https://github.com/HendrikPN/gym/blob/master/examples/scripts/list_envs>`_ to generate a list of all environments.
 
 Testing
 =======
@@ -231,6 +172,11 @@ We are using `pytest <http://doc.pytest.org>`_ for tests. You can run them via:
 
 What's new
 ==========
+
+- 2019-01-25: Conversion to SciGym.
+
+    + Removed all openai/gym environments which require dependencies for ease of access.
+    + Renaming to scigym.
 
 - 2018-02-28: Release of a set of new robotics environments.
 - 2018-01-25: Made some aesthetic improvements and removed unmaintained parts of gym. This may seem like a downgrade in functionality, but it is actually a long-needed cleanup in preparation for some great new things that will be released in the next month.

@@ -45,6 +45,10 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
         env = gym.make("Pong-v3")
         play(env, callback=env_plotter.callback)
 
+    Note
+    ----
+    deprecated?
+
 
     Arguments
     ---------
@@ -82,7 +86,7 @@ def play(env, transpose=True, fps=30, zoom=None, callback=None, keys_to_action=N
 
     obs_s = env.observation_space
     assert type(obs_s) == scigym.spaces.box.Box
-    assert len(obs_s.shape) == 2 or (len(obs_s.shape) == 3 and obs_s.shape[2] in [1,3])
+    assert len(obs_s.shape) == 2 or (len(obs_s.shape) == 3 and obs_s.shape[2] in [1,3]) # AssertionError for old Env
 
     if keys_to_action is None:
         if hasattr(env, 'get_keys_to_action'):
@@ -182,5 +186,5 @@ class PlayPlot(object):
 
 
 if __name__ == '__main__':
-    env = scigym.make("Cartpole-v0") # does this work??
+    env = scigym.make("Acrobot-v1") # does not work with classic environments
     play(env, zoom=4, fps=60)

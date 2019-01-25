@@ -81,7 +81,7 @@ class VideoRecorder(object):
 
         # Dump metadata
         self.metadata = metadata or {}
-        self.metadata['content_type'] = 'video/vnd.openai.ansivid' if self.ansi_mode else 'video/mp4'
+        self.metadata['content_type'] = 'video/vnd.scigym.ansivid' if self.ansi_mode else 'video/mp4'
         self.metadata_path = '{}.meta.json'.format(path_base)
         self.write_metadata()
 

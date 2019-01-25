@@ -16,6 +16,11 @@ class EzPickle(object):
 
     This is generally needed only for environments which wrap C/C++ code, such as MuJoCo
     and Atari.
+
+    Note
+    ----
+    
+    deprecated?
     """
     def __init__(self, *args, **kwargs):
         self._ezpickle_args = args

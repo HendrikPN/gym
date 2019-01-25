@@ -18,7 +18,7 @@ extras['all'] = all_deps
 
 setup(name='scigym_pkg',
       version=VERSION,
-      description='The OpenAI Gym for Science: A platform for your scientific reinforcement learning problem.',
+      description='SciGym -- The OpenAI Gym for Science: A platform for your scientific reinforcement learning problem.',
       url='https://github.com/HendrikPN/gym',
       author='OpenAI',
       author_email='hendrik.poulsen-nautrup@uibk.ac.at',

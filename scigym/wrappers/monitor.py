@@ -149,7 +149,7 @@ class Monitor(Wrapper):
         monitor_closer.unregister(self._monitor_id)
         self.enabled = False
 
-        logger.info('''Finished writing results. You can upload them to the scoreboard via scigym.upload(%r)''', self.directory)
+        logger.info('''Finished writing results.''')
 
     def _set_mode(self, mode):
         if mode == 'evaluation':
@@ -269,11 +269,6 @@ def disable_videos(episode_id):
     return False
 
 monitor_closer = closer.Closer()
-
-# This method gets used for a sanity check in scoreboard/api.py. It's
-# not intended for use outside of the gym codebase.
-def _open_monitors():
-    return list(monitor_closer.closeables.values())
 
 def load_env_info_from_manifests(manifests, training_dir):
     env_infos = []
