@@ -3,7 +3,7 @@
 SciGym
 **********
 
-**`SciGym <https://scigym.ai>`_ is a toolkit for developing and solving reinforcement learning environments for science.** This is the ``scigym`` open-source library, which gives you access to a standardized set of science environments. This project was forked from <https://github.com/openai/gym>`.
+**SciGym is a toolkit for developing and solving reinforcement learning environments for science.** This is the ``scigym`` open-source library, which gives you access to a standardized set of science environments. This project was forked from `OpenAI <https://github.com/openai/gym>`_. Visit our webpage at `scigym.ai <https://scigym.ai>`_.
 
 .. image:: https://travis-ci.org/HendrikPN/scigym.svg?branch=master
     :target: https://travis-ci.org/HendrikPN/scigym
