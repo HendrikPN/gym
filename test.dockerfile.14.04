@@ -1,4 +1,4 @@
-# A Dockerfile that sets up a full Gym install with test dependencies
+# A Dockerfile that sets up a full scigym install with test dependencies
 FROM ubuntu:14.04
 
 # Install keyboard-configuration separately to avoid travis hanging waiting for keyboard selection
@@ -35,10 +35,10 @@ RUN \
 # ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/.mujoco/mjpro150/bin
 
 # install dependencies
-COPY . /usr/local/gym/
-RUN cd /usr/local/gym && \
+COPY . /usr/local/scigym/
+RUN cd /usr/local/scigym && \
     tox --notest 
 
-WORKDIR /usr/local/gym/
-ENTRYPOINT ["/usr/local/gym/bin/docker_entrypoint"]
+WORKDIR /usr/local/scigym/
+ENTRYPOINT ["/usr/local/scigym/bin/docker_entrypoint"]
 CMD ["tox"]
