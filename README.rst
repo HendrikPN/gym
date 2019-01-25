@@ -5,8 +5,8 @@ SciGym
 
 **`SciGym <https://scigym.ai>`_ is a toolkit for developing and solving reinforcement learning environments for science.** This is the ``scigym`` open-source library, which gives you access to a standardized set of science environments. This project was forked from <https://github.com/openai/gym>`.
 
-.. image:: https://travis-ci.org/HendrikPN/gym.svg?branch=master
-    :target: https://travis-ci.org/HendrikPN/gym
+.. image:: https://travis-ci.org/HendrikPN/scigym.svg?branch=master
+    :target: https://travis-ci.org/HendrikPN/scigym
 
 `See What's New section below <#what-s-new>`_
 
@@ -27,7 +27,7 @@ algorithm you are writing). The agent sends `actions` to the
 environment, and the environment replies with `observations` and
 `rewards` (that is, a score).
 
-The core `scigym` interface is `Env <https://github.com/HendrikPN/gym/blob/master/gym/core.py>`_, which is
+The core `scigym` interface is `Env <https://github.com/HendrikPN/scigym/blob/master/gym/core.py>`_, which is
 the unified environment interface. There is no interface for agents;
 that part is left to you. The following are the ``Env`` methods you
 should know:
@@ -43,8 +43,8 @@ You can perform a minimal install of ``scigym`` with:
 
 .. code:: shell
 
-    git clone https://github.com/HendrikPN/gym.git
-    cd gym
+    git clone https://github.com/HendrikPN/scigym.git
+    cd scigym
     pip install -e .
 
 If you prefer, you can do a minimal install of the packaged version directly from PyPI:
@@ -80,7 +80,7 @@ To run ``pip install -e '.[all]'``, you'll need a semi-recent pip.
 Please make sure your pip is at least at version ``1.5.0``. You can
 upgrade using the following: ``pip install --ignore-installed
 pip``. Alternatively, you can open `setup.py
-<https://github.com/HendrikPN/gym/blob/master/setup.py>`_ and
+<https://github.com/HendrikPN/scigym/blob/master/setup.py>`_ and
 install the dependencies by hand.
 
 Rendering on a server
@@ -99,7 +99,7 @@ Installing dependencies for specific environments
 
 If you'd like to install the dependencies for only specific
 environments, see `setup.py
-<https://github.com/HendrikPN/gym/blob/master/setup.py>`_. We
+<https://github.com/HendrikPN/scigym/blob/master/setup.py>`_. We
 maintain the lists of dependencies on a per-environment group basis.
 
 Environments
@@ -107,9 +107,9 @@ Environments
 
 The code for each environment group is housed in its own subdirectory
 `scigym/envs
-<https://github.com/HendrikPN/gym/blob/master/scigym/envs>`_. The
+<https://github.com/HendrikPN/scigym/blob/master/scigym/envs>`_. The
 specification of each task is in `scigym/envs/__init__.py
-<https://github.com/HendrikPN/gym/blob/master/scigym/envs/__init__.py>`_. It's
+<https://github.com/HendrikPN/scigym/blob/master/scigym/envs/__init__.py>`_. It's
 worth browsing through both.
 
 Algorithmic
@@ -154,9 +154,9 @@ Examples
 
 See the ``examples`` directory.
 
-- Run `examples/agents/random_agent.py <https://github.com/HendrikPN/gym/blob/master/examples/agents/random_agent.py>`_ to run an simple random agent.
-- Run `examples/agents/cem.py <https://github.com/HendrikPN/gym/blob/master/examples/agents/cem.py>`_ to run an actual learning agent (using the cross-entropy method).
-- Run `examples/scripts/list_envs <https://github.com/HendrikPN/gym/blob/master/examples/scripts/list_envs>`_ to generate a list of all environments.
+- Run `examples/agents/random_agent.py <https://github.com/HendrikPN/scigym/blob/master/examples/agents/random_agent.py>`_ to run an simple random agent.
+- Run `examples/agents/cem.py <https://github.com/HendrikPN/scigym/blob/master/examples/agents/cem.py>`_ to run an actual learning agent (using the cross-entropy method).
+- Run `examples/scripts/list_envs <https://github.com/HendrikPN/scigym/blob/master/examples/scripts/list_envs>`_ to generate a list of all environments.
 
 Testing
 =======
