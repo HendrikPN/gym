@@ -7,7 +7,7 @@ env:
   - UBUNTU_VER=16.04
   - UBUNTU_VER=18.04
 
-install: "" # so travis doesn't do pip install requirements.txt
+install: "" # this way travis doesn't do pip install requirements.txt
 script:
   - docker build -f test.dockerfile.${UBUNTU_VER} -t scigym-test .
   - docker run scigym-test tox
