@@ -21,7 +21,7 @@ cartpole.CartPoleEnv
 
 ## How to create new environments for SciGym
 
-* Create a new repo called gym-foo, which should also be a PIP package. A simple template can be found [here](https://github.com/HendrikPN/gym-template).
+* Create a new repo called gym-foo, which should also be a PIP package. A simple template can be found [here](https://github.com/HendrikPN/gym-template) together with an [environment class description](https://hendrikpn.github.io/gym-template).
 
 * It should have at least the following files:
   ```sh
